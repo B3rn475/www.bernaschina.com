@@ -1,0 +1,23 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo clean && hexo generate",
+    "deploy": "hexo deploy"
+  },
+  "hexo": {
+    "version": "3.8.0"
+  },
+  "dependencies": {
+    "hexo": "^3.8.0",
+    "hexo-deployer-git": "^1.0.0",
+    "hexo-featured-image": "^0.2.1",
+    "hexo-generator-alias": "^0.1.3",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-marked": "^1.0.1",
+    "hexo-renderer-sass": "^0.4.0",
+    "hexo-server": "^0.3.3"
+  }
+}

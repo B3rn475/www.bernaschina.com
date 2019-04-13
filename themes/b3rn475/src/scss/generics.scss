@@ -1,0 +1,32 @@
+html {
+  transition: color $theme-transition, background-color $theme-transition;
+  background-color: map-get($light-theme, "background-color");
+  color: map-get($light-theme, "color");
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  position: relative;
+  scroll-behavior: smooth;
+  * {
+    transition: color $theme-transition;
+    background: transparent;
+    color: map-get($light-theme, "color");
+  }
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark-theme {
+  transition: color $theme-transition, background-color $theme-transition;
+  background-color: map-get($dark-theme, "background-color");
+  color: map-get($dark-theme, "color");
+  * {
+    transition: color $theme-transition;
+    color: map-get($dark-theme, "color");
+  }
+}

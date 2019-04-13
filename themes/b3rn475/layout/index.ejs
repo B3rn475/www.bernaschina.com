@@ -1,0 +1,40 @@
+<body class="homepage">
+  <header>
+    <div class="title">
+      <h1><span class="darker">CARLO</span> BERNASCHINA</h1>
+      <h2>Software Engineer <span class="lighter">&amp;</span> PhD</h2>
+    </div>
+    <a class="down" href="#posts" rel="nofollow"></a>
+    <label class="theme-switcher">
+      <input type="checkbox">
+    </label>
+  </header>
+  <a name="posts">
+  <ul class="posts">
+  <% page.posts.each(function (post) { -%>
+    <li class="post">
+      <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+        <img src="<%= post.featured_image %>">
+      </a>
+      <div class="details">
+        <p><%= date(post.date) %></p>
+        <h3 class="title">
+          <a href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+            <%= post.title %>
+          </a>
+        </h3>
+        <p><%= post.excerpt %></p>
+      </div>
+    </li>
+  <% }); -%>
+  </ul>
+  <footer>
+    <div class="copyright">
+      © <%= date(Date.now(), 'YYYY') %> Carlo Bernaschina.
+      Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+      <br>
+      <br>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+  </footer>
+</body>

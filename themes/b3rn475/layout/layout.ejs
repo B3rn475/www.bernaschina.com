@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="<%= page.title || config.title %>">
+<meta name="twitter:title" content="<%= page.title || config.title %>">
+<% if (page.featured_image) { -%>
+  <meta property="og:image" content="<%= page.featured_image %>">
+  <meta name="twitter:image" content="<%= page.featured_image %>">
+<% } -%>
+<%- css('css/main') %>
+<title><%= page.title || config.title %></title>
+<script>
+  function reloadTheme() {
+    switch (localStorage.getItem("theme")) {
+      case "dark-theme":
+        document.documentElement.className = "dark-theme";
+        break;
+      case "light-theme":
+      default:
+        document.documentElement.className = "light-theme";
+        break;
+    }
+  }
+  (function () {
+    if (!localStorage) {
+      return;
+    }
+    reloadTheme();
+  })();
+  (function () {
+    var doNotTrack = false;
+    if (window.doNotTrack !== undefined) {
+      doNotTrack = doNotTrack || (window.doNotTrack == "1" || window.doNotTrack == "yes");
+    } else if (navigator.doNotTrack !== undefined) {
+      doNotTrack = doNotTrack || (navigator.doNotTrack == "1" || navigator.doNotTrack == "yes");
+    } else if (navigator.msDoNotTrack !== undefined) {
+      doNotTrack = doNotTrack || (navigator.msDoNotTrack == "1" || navigator.msDoNotTrack == "yes");
+    } else if ('msTrackingProtectionEnabled' in window.external) {
+      doNotTrack = doNotTrack || window.external.msTrackingProtectionEnabled();
+    } else {
+      // Not supported
+      doNotTrack = true;
+    }
+    if (doNotTrack) {
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-37220006-1');
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-37220006-1';
+    document.head.append(script);
+  }());
+</script>
+</head>
+<%- body %>
+<script>
+  (function () {
+    if (!localStorage) {
+      return;
+    }
+    var switcher = document.querySelector(".theme-switcher > input");
+    if (!switcher) {
+      return;
+    }
+    switch (localStorage.getItem("theme")) {
+      case "dark-theme":
+        switcher.checked = true;
+        break;
+      case "light-theme":
+      default:
+        switcher.checked = false;
+        break;
+    }
+    switcher.addEventListener('change', function () {
+      console.log(switcher.checked);
+      localStorage.setItem("theme", switcher.checked ? "dark-theme" : "light-theme");
+      reloadTheme();
+    });
+  })();
+</script>
+</html>

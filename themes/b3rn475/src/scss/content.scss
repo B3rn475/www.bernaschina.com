@@ -1,0 +1,160 @@
+body.post {
+  .content {
+    width: 900px;
+    margin: auto;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+    > * {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      padding-left: 6rem;
+      padding-right: 6rem;
+      @media screen and (max-width: 900px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      > img, > canvas, > iframe, > video, > svg, > select, > textarea {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        width: calc(100% + 12rem);
+        margin-left: -6rem;
+        margin-right: -6rem;
+        @media screen and (max-width: 900px) {
+          width: calc(100% + 4rem);
+          margin-left: -2rem;
+          margin-right: -2rem;
+        }
+      }
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: inherit;
+      line-height: 1.42;
+      @media screen and (max-width: 900px) {
+        padding-left: 1rem;
+        pagging-right: 1rem;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3.998em;
+      @media screen and (max-width: 900px) {
+        font-size: 2.998em;
+      }
+    }
+
+    h2 {
+      font-size: 2.827em;
+      @media screen and (max-width: 900px) {
+        font-size: 1.999em;
+      }
+    }
+
+    h3 {
+      font-size: 1.999em;
+      @media screen and (max-width: 900px) {
+        font-size: 1.414em;
+      }
+    }
+
+    h4 {
+      font-size: 1.414em;
+      @media screen and (max-width: 900px) {
+        font-size: 1.121em;
+      }
+    }
+
+    h5 {
+      font-size: 1.121em;
+      @media screen and (max-width: 900px) {
+        font-size: 0.88em;
+      }
+    }
+
+    h6 {
+      font-size: .88em;
+      @media screen and (max-width: 900px) {
+        font-size: 0.8em;
+      }
+    }
+
+    small {
+      font-size: .707em;
+    }
+
+    blockquote {
+      padding-left: 0;
+      padding-right: 0;
+      p {
+        font-size: 1.5em;
+        font-style: italic;
+      }
+    }
+
+    figure {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      overflow-x: auto;
+      table {
+        width: 100%;
+        pre, code {
+          transition: color $theme-transition, background-color $theme-transition;
+          font-family: 'Roboto Mono', monospace;
+          background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -2%);
+          font-size: .8em;
+          display: block;
+          padding: 1.125em;
+          color: adjust-color(map-get($light-theme, "color"), $lightness: +2%);
+          max-width: 100%;
+        }
+        .gutter {
+          max-width: 2em;
+        }
+      }
+    }
+
+    a {
+      transition: color $theme-transition;
+      color: map-get($light-theme, "link-color");
+      &:visited {
+        transition: color $theme-transition;
+        color: map-get($light-theme, "link-color");
+      }
+      &:hover, &:focus, &:active {
+        transition: color $theme-transition;
+        color: map-get($light-theme, "link-color-hover");
+      }
+    }
+  }
+}
+
+html.dark-theme {
+  body.post {
+    .content {
+      figure {
+        table {
+          pre, code {
+            transition: color $theme-transition, background-color $theme-transition;
+            background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +20%);
+            color: adjust-color(map-get($dark-theme, "color"), $lightness: -10%);
+          }
+        }
+      }
+      a {
+        transition: color $theme-transition;
+        color: map-get($dark-theme, "link-color");
+        &:visited {
+          transition: color $theme-transition;
+          color: map-get($dark-theme, "link-color");
+        }
+        &:hover, &:focus, &:active {
+          transition: color $theme-transition;
+          color: map-get($dark-theme, "link-color-hover");
+        }
+      }
+    }
+  }
+}
