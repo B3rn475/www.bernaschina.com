@@ -9,7 +9,7 @@
       <input type="checkbox">
     </label>
   </header>
-  <a name="posts">
+  <a name="posts"></a>
   <ul class="posts">
   <% page.posts.each(function (post) { -%>
     <li class="post">
@@ -29,6 +29,21 @@
   <% }); -%>
   </ul>
   <footer>
+    <div class="social">
+      <a rel="external" href="https://www.youtube.com/user/b3rn475" target="_blank">
+        <img src="/images/youtube.png" alt="YouTube">
+      </a>
+      <a rel="external" href="https://linkedin.com/in/b3rn475" target="_blank">
+        <img src="/images/linkedin.png" alt="LinkedIn">
+      </a>
+      <a rel="external" href="https://scholar.google.pt/citations?user=Pt83gAMAAAAJ" target="_blank">
+        <img src="/images/google_scolar.png" alt="Google Scholar">
+      </a>
+      <a rel="external" href="https://dblp.org/pers/hd/b/Bernaschina:Carlo" target="_blank">
+        <img src="/images/dblp.png" alt="DBLP">
+      </a>
+    </div>
+    <br>
     <div class="copyright">
       © <%= date(Date.now(), 'YYYY') %> Carlo Bernaschina.
       Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>

@@ -63,7 +63,7 @@ body.homepage {
       transition: background-color $theme-transition;
       content: '';
       width: 1px;
-      height: 200%;
+      height: 120%;
       position: absolute;
       left: 50%;
       background-color: map-get($light-theme, "post-list-line-color");
@@ -78,6 +78,21 @@ body.homepage {
       padding: 1em;
       border: map-get($light-theme, "post-list-line-border");
       display: inline-block;
+      margin: 1rem;
+    }
+    .social {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
+      color: grey;
+      font-size: 14px;
+      padding: 0.5rem;
+      border: map-get($light-theme, "post-list-line-border");
+      display: inline-block;
+      margin: 1rem;
+      a:link, a:visited, a:hover, a:active {
+        padding: 0.5rem;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -135,6 +150,12 @@ html.dark-theme {
         background-color: map-get($dark-theme, "post-list-line-color");
       }
       .copyright {
+        transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
+        background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
+        color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
+        border: map-get($dark-theme, "post-list-line-border");
+      }
+      .social {
         transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
         background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
         color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
