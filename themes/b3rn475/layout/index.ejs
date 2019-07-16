@@ -10,6 +10,11 @@
     </label>
   </header>
   <a name="posts"></a>
+  <script>
+    (function () {
+      document.body.className += " dynamic-loading";
+    })();
+  </script>
   <ul class="posts">
   <% page.posts.each(function (post) { -%>
     <li class="post">
@@ -28,6 +33,36 @@
     </li>
   <% }); -%>
   </ul>
+  <script>
+    (function (page_size) {
+      function showPost(post) {
+        post.className += " in-view";
+      }
+      var posts_list = document.querySelector("ul.posts"),
+          posts = Array.from(posts_list.querySelectorAll("li.post")),
+          top_post = 0,
+          succ,
+          succ_container;
+      posts.slice(top_post, top_post + page_size).forEach(showPost);
+      top_post += page_size;
+      if (top_post < posts.length) {
+        succ_container = document.createElement('li');
+        succ_container.className = "more";
+        succ = document.createElement('button');
+        succ.innerHTML = "More Posts";
+        succ.addEventListener('click', function () {
+          posts.slice(top_post, top_post + page_size).forEach(showPost);
+          top_post += page_size;
+          if (top_post >= posts.length) {
+            succ_container.remove();
+            return;
+          }
+        });
+        succ_container.appendChild(succ);
+        posts_list.appendChild(succ_container);
+      }
+    })(5);
+  </script>
   <footer>
     <div class="social">
       <a rel="external" href="https://www.youtube.com/user/b3rn475" target="_blank">

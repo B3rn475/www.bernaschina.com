@@ -3,7 +3,7 @@
   $date-color: adjust-color(map-get($light-theme, "color"), $lightness: +15%);
   list-style-type: none;
   margin: 0;
-  padding: 0 0 100px 0;
+  padding: 0 0 1rem 0;
   overflow: hidden;
   position: relative;
   &:before {
@@ -11,11 +11,11 @@
     content: '';
     display: block;
     width: 1px;
-    height: 200%;
     position: absolute;
     left: 50%;
     background-color: map-get($light-theme, "post-list-line-color");
-    top: -50%;
+    top: -1rem;
+    bottom: -1rem;
     z-index: 0;
   }
   > .post {
@@ -145,6 +145,24 @@
       }
     }
   }
+  > .more {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem auto 1rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    > button {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
+      color: grey;
+      font-size: 14px;
+      padding: 0.5rem;
+      border: map-get($light-theme, "post-list-line-border");
+      display: inline-block;
+      margin: 1rem;
+    }
+  }
 }
 html.dark-theme {
   .posts {
@@ -181,6 +199,23 @@ html.dark-theme {
             color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
           }
         }
+      }
+    }
+    > .more {
+      > button {
+        transition: border $theme-transition, background-color $theme-transition;
+        background-color: $background-color;
+        border: map-get($dark-theme, "post-list-line-border");
+      }
+    }
+  }
+}
+body.dynamic-loading {
+  > .posts {
+    > .post {
+      display: none;
+      &.in-view {
+        display: block;
       }
     }
   }

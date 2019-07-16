@@ -23,6 +23,16 @@
         break;
     }
   }
+  if (!Array.from) {
+    Array.from = function (list) {
+      var i = 0,
+          result = [];
+      for (i = 0; i < list.length; i += 1) {
+        result.push(list[i]);
+      }
+      return result;
+    };
+  }
   (function () {
     if (!localStorage) {
       return;
@@ -77,7 +87,6 @@
         break;
     }
     switcher.addEventListener('change', function () {
-      console.log(switcher.checked);
       localStorage.setItem("theme", switcher.checked ? "dark-theme" : "light-theme");
       reloadTheme();
     });

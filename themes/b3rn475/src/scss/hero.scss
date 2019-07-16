@@ -63,11 +63,11 @@ body.homepage {
       transition: background-color $theme-transition;
       content: '';
       width: 1px;
-      height: 120%;
       position: absolute;
       left: 50%;
       background-color: map-get($light-theme, "post-list-line-color");
       top: 0;
+      bottom: 0;
       z-index: -1;
     }
     .copyright {
