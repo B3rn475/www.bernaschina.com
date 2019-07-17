@@ -32,7 +32,7 @@ It has been a while since my last post on this blog and, in general, since any r
 In this post I will tell you why and what I'm changing.
 
 ## Problems
-The work on the old website has become complex and tedious. The is no single corporate but here is a list of possible problems:
+The work on the old website has become complex and tedious. There is no single corporate but here is a list of possible problems:
 
 ![Old Website][url-old-website-image-file]
 
