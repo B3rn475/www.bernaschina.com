@@ -16,7 +16,14 @@
     })();
   </script>
   <ul class="posts">
-  <% page.posts.each(function (post) { -%>
+  <% var page_size = 2;
+    page.posts.each(function (post, index) {
+      if (index !== 0 && index % page_size === 0) {
+        if (index !== page_size) { -%>
+    </noscript>
+  <%    } -%>
+    <noscript>
+  <%  } -%>
     <li class="post">
       <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
         <img src="<%= post.featured_image %>">
@@ -32,28 +39,26 @@
       </div>
     </li>
   <% }); -%>
+    </noscript>
   </ul>
   <script>
     (function (page_size) {
-      function showPost(post) {
-        post.className += " in-view";
-      }
       var posts_list = document.querySelector("ul.posts"),
-          posts = Array.from(posts_list.querySelectorAll("li.post")),
-          top_post = 0,
+          posts_pages = Array.from(posts_list.querySelectorAll("noscript")),
+          tmp = document.createElement("ul"),
           succ,
           succ_container;
-      posts.slice(top_post, top_post + page_size).forEach(showPost);
-      top_post += page_size;
-      if (top_post < posts.length) {
+      if (posts_pages.length) {
         succ_container = document.createElement('li');
         succ_container.className = "more";
         succ = document.createElement('button');
         succ.innerHTML = "More Posts";
         succ.addEventListener('click', function () {
-          posts.slice(top_post, top_post + page_size).forEach(showPost);
-          top_post += page_size;
-          if (top_post >= posts.length) {
+          tmp.innerHTML = posts_pages.shift().innerHTML;
+          Array.from(tmp.querySelectorAll("li.post")).forEach(function (post) {
+            posts_list.insertBefore(post, succ_container);
+          });
+          if (!posts_pages.length) {
             succ_container.remove();
             return;
           }
@@ -61,7 +66,7 @@
         succ_container.appendChild(succ);
         posts_list.appendChild(succ_container);
       }
-    })(5);
+    })(<%= page_size %>);
   </script>
   <footer>
     <div class="social">

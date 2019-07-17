@@ -18,7 +18,7 @@
     bottom: -1rem;
     z-index: 0;
   }
-  > .post {
+  .post {
     list-style-type: none;
     padding: 0;
     margin: 100px auto 0;
@@ -171,7 +171,7 @@ html.dark-theme {
       transition: background-color $theme-transition;
       background-color: map-get($dark-theme, "post-list-line-color");
     }
-    > .post {
+    .post {
       @media screen and (max-width: 900px) {
         transition: border-bottom $theme-transition, background-color $theme-transition;
         background-color: $background-color;
@@ -206,16 +206,6 @@ html.dark-theme {
         transition: border $theme-transition, background-color $theme-transition;
         background-color: $background-color;
         border: map-get($dark-theme, "post-list-line-border");
-      }
-    }
-  }
-}
-body.dynamic-loading {
-  > .posts {
-    > .post {
-      display: none;
-      &.in-view {
-        display: block;
       }
     }
   }
