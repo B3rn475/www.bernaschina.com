@@ -66,3 +66,13 @@ deploy:
   email: b3rn4@hotmail.it
   repo: git@github.com:B3rn475/www.bernaschina.com.git
   branch: gh-pages
+
+asset_pipeline:
+  clean_css:
+    enable: true
+  uglify_js:
+    enable: true
+  imagemin:
+    enable: true
+  html_minifier:
+    enable: true
