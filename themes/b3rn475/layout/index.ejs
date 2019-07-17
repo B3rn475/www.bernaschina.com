@@ -16,7 +16,7 @@
     })();
   </script>
   <ul class="posts">
-  <% var page_size = 2;
+  <% var page_size = 5;
     page.posts.each(function (post, index) {
       if (index !== 0 && index % page_size === 0) {
         if (index !== page_size) { -%>
@@ -42,7 +42,7 @@
     </noscript>
   </ul>
   <script>
-    (function (page_size) {
+    (function () {
       var posts_list = document.querySelector("ul.posts"),
           posts_pages = Array.from(posts_list.querySelectorAll("noscript")),
           tmp = document.createElement("ul"),
@@ -66,7 +66,7 @@
         succ_container.appendChild(succ);
         posts_list.appendChild(succ_container);
       }
-    })(<%= page_size %>);
+    })();
   </script>
   <footer>
     <div class="social">
