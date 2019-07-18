@@ -10,18 +10,10 @@
     </label>
   </header>
   <a name="posts"></a>
-  <script>
-    (function () {
-      document.body.className += " dynamic-loading";
-    })();
-  </script>
   <ul class="posts">
   <% var page_size = 5;
     page.posts.each(function (post, index) {
-      if (index !== 0 && index % page_size === 0) {
-        if (index !== page_size) { -%>
-    </noscript>
-  <%    } -%>
+      if (index !== 0 && index % page_size === 0) { -%>
     <noscript>
   <%  } -%>
     <li class="post">
@@ -38,8 +30,10 @@
         <p><%= post.excerpt %></p>
       </div>
     </li>
-  <% }); -%>
+  <% });
+     if (page.posts.length > page_size) { -%>
     </noscript>
+  <% } -%>
   </ul>
   <script>
     (function () {
