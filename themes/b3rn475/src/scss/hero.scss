@@ -5,7 +5,7 @@ body.homepage {
     width: 100%;
     height: 100%;
     background-color: #444444;
-    background-image: url(/images/hero.jpg);
+    background-image: url(../images/hero.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -45,7 +45,7 @@ body.homepage {
     }
     > a.down {
       display: inline-block;
-      background-image: url(/icons/down.svg);
+      background-image: url(../icons/down.svg);
       background-size: cover;
       width: 3rem;
       height: 3rem / 26 * 15;
@@ -109,7 +109,7 @@ body.post {
     }
     a.home {
       margin: 0.5rem;
-      background-image: url(/icons/light-theme/home.svg);
+      background-image: url(../icons/light-theme/home.svg);
       background-size: cover;
       display: inline-block;
       width: 1.5rem;
@@ -169,7 +169,7 @@ html.dark-theme {
       border-bottom: map-get($dark-theme, "post-list-line-border");
       a.home {
         transition: background-image $theme-transition;
-        background-image: url(/icons/dark-theme/home.svg);
+        background-image: url(../icons/dark-theme/home.svg);
       }
     }
     > footer {
@@ -238,7 +238,7 @@ html.light-theme {
         &:before {
           transition: background-color $theme-transition, left $theme-transition;
           background-color: map-get($light-theme, "switcher-color");
-          background-image: url(/icons/light-theme/light.svg);
+          background-image: url(../icons/light-theme/light.svg);
           background-position: center;
           background-size: contain;
           left: 1.6rem;
@@ -258,7 +258,7 @@ html.dark-theme {
         &:before {
           transition: background-color $theme-transition, left $theme-transition;
           background-color: map-get($dark-theme, "switcher-color");
-          background-image: url(/icons/dark-theme/dark.svg);
+          background-image: url(../icons/dark-theme/dark.svg);
           background-position: center;
           background-size: contain;
           left: 0.1rem;
