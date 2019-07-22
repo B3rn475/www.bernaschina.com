@@ -1,0 +1,82 @@
+body.post {
+  .content {
+    figure.highlight.html {
+      .tag {
+        .name {
+          color: #891c25;
+        }
+        .attr {
+          color: #774c23;
+        }
+        .string {
+          color: #98c379;
+        }
+      }
+      .comment {
+        color: #4a6d30;
+        font-style: italic;
+      }
+    }
+    figure.highlight.javascript {
+      .keyword {
+        color: #74298a;
+      }
+      .built_in {
+        color: #891c25;
+      }
+      .title {
+        color: #236093;
+      }
+      .string {
+        color: #4a6d30;
+      }
+      .comment {
+        color: #2b4e90;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+html.dark-theme{
+  body.post {
+    .content {
+      figure.highlight.html {
+        .tag {
+          .name {
+            color: #e06c75;
+          }
+          .attr {
+            color: #d19a66;
+          }
+          .string {
+            color: #98c379;
+          }
+        }
+        .comment {
+          color: #98b1e0;
+          font-style: italic;
+        }
+      }
+      figure.highlight.javascript {
+        .keyword {
+          color: #ca8cdc;
+        }
+        .built_in {
+          color: #e06c75;
+        }
+        .title {
+          color: #8cbbe3;
+        }
+        .string {
+          color: #98c379;
+        }
+        .comment {
+          color: #98b1e0;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

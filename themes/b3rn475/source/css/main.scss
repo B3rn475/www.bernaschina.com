@@ -20,8 +20,9 @@ $dark-theme: (
 
 $theme-transition: 0.5s ease;
 
-@import '../../src/scss/fonts';
-@import '../../src/scss/generics';
-@import '../../src/scss/content';
-@import '../../src/scss/hero';
-@import '../../src/scss/post_list';
+@import '_parts/fonts';
+@import '_parts/generics';
+@import '_parts/content';
+@import '_parts/code_highlighting';
+@import '_parts/hero';
+@import '_parts/post_list';
