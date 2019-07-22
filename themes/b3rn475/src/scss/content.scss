@@ -1,5 +1,7 @@
 body.post {
   .content {
+    text-align: justify;
+    text-justify: inter-word;
     width: 900px;
     margin: auto;
     @media screen and (max-width: 900px) {
