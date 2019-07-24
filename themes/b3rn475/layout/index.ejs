@@ -37,28 +37,30 @@
   </ul>
   <script>
     (function () {
-      var posts_list = document.querySelector("ul.posts"),
-          posts_pages = Array.from(posts_list.querySelectorAll("noscript")),
-          tmp = document.createElement("ul"),
-          succ,
-          succ_container;
-      if (posts_pages.length) {
-        succ_container = document.createElement('li');
-        succ_container.className = "more";
-        succ = document.createElement('button');
-        succ.innerHTML = "More Posts";
-        succ.addEventListener('click', function () {
-          tmp.innerHTML = posts_pages.shift().innerHTML;
-          Array.from(tmp.querySelectorAll("li.post")).forEach(function (post) {
-            posts_list.insertBefore(post, succ_container);
-          });
-          if (!posts_pages.length) {
-            succ_container.remove();
-            return;
+      function showNextPage(ul) {
+        var noscript = ul.querySelector('noscript'), // the first noscript
+            parser = document.createElement('div'), // a temporary element to parse the content of the noscript
+            li;
+        parser.innerHTML = noscript.innerHTML; // parse the pages
+        while (li = parser.querySelector('li')) { // for each parse li tag
+          li.remove(); // remove it from the parser
+          ul.insertBefore(li, noscript); // insert it before the noscript
+        }
+        noscript.remove(); // remove the noscript
+      }
+      if (document.querySelector("ul.posts noscript")) {
+        more_container = document.createElement('li');
+        more_container.className = "more";
+        more = document.createElement('button');
+        more.innerHTML = "More Posts";
+        more.addEventListener('click', function () {
+          showNextPage(document.querySelector("ul.posts"));
+          if (!document.querySelector("ul.posts noscript")) {
+            more_container.remove();
           }
         });
-        succ_container.appendChild(succ);
-        posts_list.appendChild(succ_container);
+        more_container.appendChild(more);
+        document.querySelector("ul.posts").appendChild(more_container);
       }
     })();
   </script>
