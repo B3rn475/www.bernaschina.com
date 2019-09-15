@@ -1,7 +1,9 @@
 ---
 title: Dynamic list loading in JavaScript with fallback
-date: 2019-09-22
+date: 2019-08-22
 featured_image: thumbnail.jpg
+alias:
+- 2019/09/22/dynamic-list-loading-with-javascript-and-fallback/
 ---
 Let's talk today about an interesting challenge of this website and the way I solved it.
 
