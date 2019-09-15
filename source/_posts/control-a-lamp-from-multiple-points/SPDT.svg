@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="-100 -100 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" filterUnits="userSpaceOnUse">
+      <feMorphology in="SourceGraphic" result="dilated" operator="dilate" radius="5"></feMorphology>
+      <feGaussianBlur in="dilated" stdDeviation="10" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M400,0 L600,0 L600,200 L400,200 Z" onclick="flip()"></path>
+  <g id="wire-in" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,100 L420,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,100 L420,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-a" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M580,50 L1000,050" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M580,50 L1000,50" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-b">
+    <path stroke="grey" stroke-width="20" fill="none" d="M580,150 L1000,150" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M580,150 L1000,150" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="connection" class="i" onclick="flip()">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M420,100 L580,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M420,100 L580,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="420" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="420" cy="100" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="580" cy="50" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power-default" cx="580" cy="50" r="10" stroke="none"></circle>
+    <circle cx="580" cy="150" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power-active" cx="580" cy="150" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <style>
+    <![CDATA[
+    .connection {
+      transform: rotate(-18deg);
+      transform-box: fill-box;
+      transform-origin: 0 0;
+    }
+    .is-active > .connection {
+      transform: rotate(18deg);
+    }
+    .on-power-default {
+      fill: #00eeaa;
+    }
+    .on-power-active {
+      fill: none;
+    }
+    .flow {
+      stroke: none;
+    }
+    .is-active > .on-power-default {
+      fill: none;
+    }
+    .is-active > .on-power-active {
+      fill: #00eeaa;
+    }
+    .is-on > .flow, #connection > .flow {
+      stroke: #00eeaa;
+      animation: dash 2s linear infinite;
+    }
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+    ]]>
+  </style>
+  <script>
+    //<![CDATA[
+      function flip() {
+        var wireOutA = document.getElementById("wire-out-a"),
+            wireOutB = document.getElementById("wire-out-b"),
+            connection = document.getElementById("connection");
+        connection.classList.toggle("is-active");
+        wireOutA.classList.toggle("is-on");
+        wireOutB.classList.toggle("is-on");
+      }
+    //]]>
+  </script>
+</svg>

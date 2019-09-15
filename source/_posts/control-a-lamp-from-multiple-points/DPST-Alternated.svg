@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="-100 -100 1200 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" filterUnits="userSpaceOnUse">
+      <feMorphology in="SourceGraphic" result="dilated" operator="dilate" radius="5"></feMorphology>
+      <feGaussianBlur in="dilated" stdDeviation="10" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M400,0 L600,0 L600,250 L400,250 Z" onclick="flip()"></path>
+  <g id="wire-in-a" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,100 L420,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,100 L420,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-in-b" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,200 L420,200" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,200 L420,200" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-a">
+    <path stroke="grey" stroke-width="20" fill="none" d="M580,100 L1000,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M580,100 L1000,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-b" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M580,200 L1000,200" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M580,200 L1000,200" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="connection-a" onclick="flip()">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M420,100 L580,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M420,100 L580,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="420" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="420" cy="100" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="580" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power" cx="580" cy="100" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <g id="connection-b" class="is-active" onclick="flip()">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M420,200 L580,200" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M420,200 L580,200" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="420" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="420" cy="200" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="580" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power" cx="580" cy="200" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <style>
+    <![CDATA[
+    .connection {
+      transform: rotate(-18deg);
+      transform-box: fill-box;
+      transform-origin: 0 0;
+    }
+    .is-active > .connection {
+      transform: rotate(0deg);
+    }
+    .on-power {
+      fill: none;
+    }
+    .flow {
+      stroke: none;
+    }
+    .is-active > .on-power {
+      fill: #00eeaa;
+    }
+    .is-on > .flow, #connection-a > .flow, #connection-b > .flow {
+      stroke: #00eeaa;
+      animation: dash 2s linear infinite;
+    }
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+    ]]>
+  </style>
+  <script>
+    //<![CDATA[
+      function flip() {
+        var wireOutA = document.getElementById("wire-out-a"),
+            wireOutB = document.getElementById("wire-out-b"),
+            connectionA = document.getElementById("connection-a"),
+            connectionB = document.getElementById("connection-b");
+        connectionA.classList.toggle("is-active");
+        connectionB.classList.toggle("is-active");
+        wireOutA.classList.toggle("is-on");
+        wireOutB.classList.toggle("is-on");
+      }
+    //]]>
+  </script>
+</svg>

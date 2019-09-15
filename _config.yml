@@ -81,5 +81,7 @@ asset_pipeline:
     enable: true
   imagemin:
     enable: true
+    exclude:
+      - svg
   html_minifier:
     enable: true

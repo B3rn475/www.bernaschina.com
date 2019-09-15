@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="-100 -100 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" filterUnits="userSpaceOnUse">
+      <feMorphology in="SourceGraphic" result="dilated" operator="dilate" radius="5"></feMorphology>
+      <feGaussianBlur in="dilated" stdDeviation="10" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M200,0 L400,0 L400,200 L200,200 Z" onclick="flip('first')"></path>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M600,0 L800,0 L800,200 L600,200 Z" onclick="flip('second')"></path>
+  <g id="wire-in" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,100 L220,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,100 L220,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-mid">
+    <path stroke="grey" stroke-width="20" fill="none" d="M380,100 L620,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M380,100 L620,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out">
+    <path stroke="grey" stroke-width="20" fill="none" d="M780,100 L1000,100" stroke-linecap="round"></path>
+    <path stroke="grey" stroke-width="20" fill="none" d="M1000,250 L0,250" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M780,100 L1000,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M1000,250 L0,250" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="connection-first" onclick="flip('first')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M220,100 L380,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M220,100 L380,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="220" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="220" cy="100" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="380" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-active" cx="380" cy="100" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <g id="connection-second" onclick="flip('second')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M620,100 L780,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M620,100 L780,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="620" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power"  cx="620" cy="100" r="10" stroke="none" fill="none"></circle>
+    <circle cx="780" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power on-active" cx="780" cy="100" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <style>
+    <![CDATA[
+    .connection {
+      transform: rotate(-18deg);
+      transform-box: fill-box;
+      transform-origin: 0 0;
+    }
+    .is-active > .connection {
+      transform: rotate(0deg);
+    }
+    .on-power, .on-active {
+      fill: none;
+    }
+    .flow {
+      stroke: none;
+    }
+    .is-active > .on-active {
+      fill: #00eeaa;
+    }
+    .has-power > .on-power {
+      fill: #00eeaa;
+    }
+    .is-active > .on-power.on-active,
+    .has-power > .on-power.on-active {
+      fill: none;
+    }
+    .is-active.has-power > .on-power.on-active {
+      fill: #00eeaa;
+    }
+    .is-on > .flow, #connection-first > .flow, #connection-second.has-power > .flow {
+      stroke: #00eeaa;
+      animation: dash 2s linear infinite;
+    }
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+    ]]>
+  </style>
+  <script>
+    //<![CDATA[
+      function flip(item) {
+        var wireMid = document.getElementById("wire-mid"),
+            wireOut = document.getElementById("wire-out"),
+            connectionFirst = document.getElementById("connection-first"),
+            connectionSecond = document.getElementById("connection-second");
+        if (item == 'first') {
+          connectionFirst.classList.toggle("is-active");
+          connectionSecond.classList.toggle("has-power");
+          wireMid.classList.toggle("is-on");
+        } else {
+          connectionSecond.classList.toggle("is-active");
+        }
+        wireOut.classList.remove("is-on");
+        if (connectionSecond.classList.contains("has-power") &&
+            connectionSecond.classList.contains("is-active")) {
+          wireOut.classList.add("is-on");
+        }
+      }
+    //]]>
+  </script>
+</svg>
