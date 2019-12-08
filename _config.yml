@@ -85,3 +85,7 @@ asset_pipeline:
       - svg
   html_minifier:
     enable: true
+
+# Featured Image
+featured_image:
+  absolute_path_reference: true
