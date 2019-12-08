@@ -66,14 +66,7 @@ time_format: HH:mm:ss
 ## Themes: https://hexo.io/themes/
 theme: b3rn475
 
-# Deploy
-deploy:
-  type: git
-  name: Carlo Bernaschina
-  email: b3rn4@hotmail.it
-  repo: git@github.com:B3rn475/www.bernaschina.com.git
-  branch: gh-pages
-
+# Asset Pipeline
 asset_pipeline:
   clean_css:
     enable: true
@@ -89,3 +82,11 @@ asset_pipeline:
 # Featured Image
 featured_image:
   absolute_path_reference: true
+
+# Deploy
+deploy:
+  type: git
+  name: Carlo Bernaschina
+  email: b3rn4@hotmail.it
+  repo: git@github.com:B3rn475/www.bernaschina.com.git
+  branch: gh-pages
