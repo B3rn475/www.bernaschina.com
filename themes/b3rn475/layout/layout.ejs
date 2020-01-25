@@ -8,10 +8,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <% if (config.social && config.social.Twitter) { -%>
 <meta name="twitter:creator" content="@<%= config.social.Twitter %>">
-<% } -%>
-<% if (page.featured_image) { -%>
-  <meta property="og:image" content="<%= full_url_for(page.featured_image) %>">
-  <meta name="twitter:image" content="<%= full_url_for(page.featured_image) %>">
+<% }
+   if (page.featured_image || theme.thumbnail) {
+   const image_full_url = full_url_for(page.featured_image || theme.thumbnail);
+   -%>
+  <meta property="og:image" content="<%= image_full_url %>">
+  <meta name="twitter:image" content="<%= image_full_url %>">
 <% } -%>
 <%- css('css/main') %>
 <title><%= page.title || config.title %></title>
