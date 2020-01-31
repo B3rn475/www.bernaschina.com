@@ -23,7 +23,7 @@ While roaming your normal tariffs do not apply and, depending on the laws (e.g. 
 
 While a lot of people call the two things "just making a phone call", there is an important difference between a "real phone call" and using messaging apps like [Google Duo][google-duo-url], [Telegram][telegram-url] or [WhatsApp][whatsapp-url] (no preference just following the lexicographical order).
 
-When you are making a real phone call, i.e. you are using the actual phone in your smartphone, your voice is transmitted via the __mobile network__ (no data plan required), you are connected on, and routed towards the phone number your are using.
+When you are making a real phone call, i.e. you are using the actual phone in your smartphone, your voice is transmitted via the __mobile network__ (no data plan required), you are connected on, and routed towards the phone number you are using.
 It is important to notice that this has nothing to do with any data plan you have or to the fact that you are connected to a __WiFi network__. A phone call depends solely on the phone network you are connected to. If your phone is connected to a WiFi network, but is not connected to the phone network, you cannot make a call. (I will not cover the case of operators with Call over WiFi, like [AT&T][at-and-t-wifi-calling-url] or [Google Fi][google-fi-calls-via-wifi-url], as it requires enabled smartphone and doesn't work in all countries)
 What you are going to pay is dependent solely on your voice plan. If you have a finite amount of minutes you can call for free up to this limit and you will start paying extra after you go over it.
 
@@ -71,7 +71,7 @@ With a normal phone call you can call for a bit more of `8` minutes, while with 
 
 ## Conclusions
 
-If your are roaming and you have a WiFi connection prefer using a messaging app, you will have no hard limits. Except for the time needed to sleep between two phone calls.
+If you are roaming and you have a WiFi connection prefer using a messaging app, you will have no hard limits. Except for the time needed to sleep between two phone calls.
 
 If you are roaming and you don't have a WiFi connection.
 
