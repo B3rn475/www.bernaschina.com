@@ -67,7 +67,7 @@ For a phone call via a messaging app the cost is `~0.012 CHF` per minute (`0.48 
 
 This may be not fair as in the contract we are considering you pay `4.90 CHF` regardless of using the whole `200 MB` or not.
 In this case we can consider how long can you call with this `4.90 CHF`.
-With a normal phone call you can call for a bit more of `8` minutes, while with a can call via a messaging app you can call for more than `6` hours and `48` minutes.
+With a normal phone call you can call for a bit more of `8` minutes, while with a call via a messaging app you can call for more than `6` hours and `48` minutes.
 
 ## Conclusions
 
