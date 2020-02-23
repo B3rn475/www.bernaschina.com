@@ -85,7 +85,7 @@ Generally,
 
 In our case normal phone calls were a good choice only if we were certain not to make more than `8` minutes of total calls.
 
-> I don't know you but when I call my [mom][phone-call-joke-url] it always takes more than `8` minutes
+> I don't know you, but, when I call my [mom][phone-call-joke-url], it always takes more than `8` minutes
 
 [bitrate-wiki-url]: https://en.wikipedia.org/wiki/Bit_rate
 [codec-wiki-url]: https://en.wikipedia.org/wiki/Codec
