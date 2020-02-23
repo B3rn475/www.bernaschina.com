@@ -39,6 +39,8 @@ highlight:
   auto_detect: false
   tab_replace:
 
+per_page: 0
+
 social:
   Twitter: b3rn475
   YouTube: b3rn475
