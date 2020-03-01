@@ -10,7 +10,10 @@
   <%- page.content -%>
   <% if (page.author || config.author) { -%>
     <blockquote class="sign">
-      <p><%= page.author || config.author %></p>
+      <p>
+        <%= page.author || config.author %><br>
+        <i><small><%- date(page.date) %></small></i>
+      </p>
 	  </blockquote>
   <% } -%>
   </div>
