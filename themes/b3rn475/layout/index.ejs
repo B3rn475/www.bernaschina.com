@@ -54,7 +54,7 @@
       if (document.querySelector("ul.posts noscript")) {
         more_container = document.createElement('li');
         more_container.className = "more";
-        more = document.createElement('button');
+        more = document.createElement('a');
         more.innerHTML = "More Posts";
         more.addEventListener('click', function () {
           showNextPage(document.querySelector("ul.posts"));
