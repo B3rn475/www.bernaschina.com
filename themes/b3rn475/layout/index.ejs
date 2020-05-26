@@ -71,32 +71,32 @@
     <% if (config.social) { -%>
     <div class="social">
       <% if (config.social.Twitter) { -%>
-      <a rel="external" href="https://twitter.com/<%= config.social.Twitter %>" target="_blank">
+      <a rel="noopener" href="https://twitter.com/<%= config.social.Twitter %>" target="_blank">
         <img src="<%= url_for('/images/twitter.png') %>" alt="Twitter">
       </a>
       <% } -%>
       <% if (config.social.Instagram) { -%>
-      <a rel="external" href="https://www.instagram.com/<%= config.social.Instagram %>" target="_blank">
+      <a rel="noopener" href="https://www.instagram.com/<%= config.social.Instagram %>" target="_blank">
         <img src="<%= url_for('/images/instagram.png') %>" alt="Instagram">
       </a>
       <% } -%>
       <% if (config.social.YouTube) { -%>
-      <a rel="external" href="https://www.youtube.com/user/<%= config.social.YouTube %>" target="_blank">
+      <a rel="noopener" href="https://www.youtube.com/user/<%= config.social.YouTube %>" target="_blank">
         <img src="<%= url_for('/images/youtube.png') %>" alt="YouTube">
       </a>
       <% } -%>
       <% if (config.social.LinkedIn) { -%>
-      <a rel="external" href="https://linkedin.com/in/<%= config.social.LinkedIn %>" target="_blank">
+      <a rel="noopener" href="https://linkedin.com/in/<%= config.social.LinkedIn %>" target="_blank">
         <img src="<%= url_for('/images/linkedin.png') %>" alt="LinkedIn">
       </a>
       <% } -%>
       <% if (config.social.GoogleScholar) { -%>
-      <a rel="external" href="https://scholar.google.pt/citations?user=<%= config.social.GoogleScholar %>" target="_blank">
+      <a rel="noopener" href="https://scholar.google.pt/citations?user=<%= config.social.GoogleScholar %>" target="_blank">
         <img src="<%= url_for('/images/google_scholar.png') %>" alt="Google Scholar">
       </a>
       <% } -%>
       <% if (config.social.DBLP) { -%>
-      <a rel="external" href="https://dblp.org/pers/hd/b/<%= config.social.DBLP %>" target="_blank">
+      <a rel="noopener" href="https://dblp.org/pers/hd/b/<%= config.social.DBLP %>" target="_blank">
         <img src="<%= url_for('/images/dblp.png') %>" alt="DBLP">
       </a>
       <% } -%>
