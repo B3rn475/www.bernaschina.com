@@ -21,7 +21,7 @@
   <%  } -%>
     <li class="post">
       <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
-        <img src="<%= post.featured_image %>">
+        <img src="<%= post.featured_image %>" alt="<%= post.title %>">
       </a>
       <div class="details">
         <p><%= date(post.date) %></p>
