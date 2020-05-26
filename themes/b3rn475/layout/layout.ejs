@@ -15,6 +15,7 @@
   <meta property="og:image" content="<%= image_full_url %>">
   <meta name="twitter:image" content="<%= image_full_url %>">
 <% } -%>
+<link rel="canonical" href="<%= full_url_for(page.link || page.path) %>">
 <%- css('css/main') %>
 <title><%= page.title || config.title %></title>
 <script>
