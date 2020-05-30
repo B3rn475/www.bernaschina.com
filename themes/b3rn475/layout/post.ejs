@@ -6,12 +6,7 @@
       thumbnail: page.featured_image,
       canonical: page.link || page.path
     }) -%>
-<% if (typeof page.structured_data === 'string') {
-     page.structured_data = {
-       '@type': page.structured_data
-     };
-   }
-   if (typeof page.structured_data === 'object') {
+<% if (typeof page.structured_data === 'object') {
      function fillBlanksWith(object, value) {
        Object.keys(value).forEach(function (key) {
          if (object.hasOwnProperty(key)) {
@@ -32,7 +27,6 @@
      }
      fillBlanksWith(page.structured_data, {
        '@context': 'https://schema.org/',
-       'image': full_url_for(page.featured_image),
        'author': {
          '@type': 'Person',
          'name': config.author
@@ -48,6 +42,9 @@
        'datePublished': page.date.toISOString(),
        'dateModified': page.date.toISOString(),
        'mainEntityOfPage': full_url_for(page.link || page.path)
+     });
+     page.structured_data.image = page.structured_data.image.map(function (url) {
+       return full_url_for(page.path + url);
      }); -%>
   <script type="application/ld+json">
 <%- JSON.stringify(page.structured_data) -%>
