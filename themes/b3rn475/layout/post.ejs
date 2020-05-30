@@ -68,11 +68,9 @@
 </head>
 <body class="post">
   <header>
-    <a class="home" title="Go Home" href="<%= url_for('/') %>"></a>
+    <%- partial('partial/home_button', {}, {cache: true}) -%>
     <h1><%- page.title -%></h1>
-    <label class="theme-switcher">
-      <input type="checkbox">
-    </label>
+    <%- partial('partial/theme_switcher', {}, {cache: true}) -%>
   </header>
   <div class="content">
   <%- page.content -%>
