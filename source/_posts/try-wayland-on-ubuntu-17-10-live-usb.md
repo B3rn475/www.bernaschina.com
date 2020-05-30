@@ -2,6 +2,30 @@
 title: Try Wayland on Ubuntu 17.10 Live USB
 date: 2017-12-20
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "HowTo"
+  image:
+    - thumbnail_amp.jpg
+  step:
+    - name: Exit from the X11 Environment
+      text: |+
+        You need to log out from the current session and go back to the login screen.
+        Once here press `CTRL + ALT + F6` to open a terminal that is not emulated in the windows manager.
+      url: '#Step-1-Exit-from-the-X11-Environment'
+    - name: Stop GDM3
+      text: To stop GDM3 run `sudo /etc/init.d/gdm3 stop`
+      url: '#Step-2-Stop-GDM3'
+    - name: Change GDM3 configurations
+      text: |+
+        Configure __GDM3__ to use Wayland by editing the configuration file /etc/gdm3/custom.conf
+        Set `WaylandEnable` to `true` and `AutomaticLoginEnable` to `false`
+      url: '#Step-3-Change-GDM3-configurations'
+    - name: Restart GDM3
+      text: To start __GDM3__ again it run `sudo /etc/init.d/gdm3 start`
+      url: '#Step-4-Restart-GDM3'
+    - name: Go Back to the Graphical Environment
+      text: To go back to the graphical environment and try Wayland press `CTRL + ALT + F1`
+      url: '#Step-5-Go-Back-to-the-Graphical-Environment'
 alias: en/blog/software/try-wayland-ubuntu-1710-live-usb/
 ---
 My current laptop is a Dell XPS 15 with a 3200x1800 screen.

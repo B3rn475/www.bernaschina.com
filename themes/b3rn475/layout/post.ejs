@@ -25,6 +25,19 @@
            'headline': page.title
          });
          break;
+       case 'HowTo':
+         fillBlanksWith(structured_data, {
+           'name': page.title
+         });
+         structured_data.step.forEach(function (step) {
+           fillBlanksWith(step, {
+             '@type': 'HowToStep'
+           });
+           if (step.url) {
+             step.url = full_url_for(page.path + step.url);
+           }
+         });
+         break;
      }
      fillBlanksWith(structured_data, {
        '@context': 'https://schema.org/',
