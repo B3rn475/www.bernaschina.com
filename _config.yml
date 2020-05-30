@@ -16,6 +16,9 @@ url: https://www.bernaschina.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
 
 # Directory
 source_dir: source
