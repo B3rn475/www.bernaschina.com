@@ -2,6 +2,10 @@
 title: Calling While On Roaming
 date: 2020-01-31
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 ---
 I've recently had an interesting (and [looooooooooong][long-joke-url]) conversation with my sister on phone calls, vs calls via an app, while roaming.
 

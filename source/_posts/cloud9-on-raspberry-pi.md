@@ -2,6 +2,10 @@
 title: Cloud9 on Raspberry Pi
 date: 2013-08-18
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 alias:
 - en/blog/raspberrypi/
 - it/blog/raspberrypi/

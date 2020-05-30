@@ -1,6 +1,10 @@
 ---
 title: Control a lamp from multiple points
 date: 2019-09-15
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 featured_image: thumbnail.jpg
 ---
 Everyone has around the house a lamp or some kind of electrical equipment which is controlled by a switch on its power cord.

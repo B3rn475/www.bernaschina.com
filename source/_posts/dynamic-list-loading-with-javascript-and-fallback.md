@@ -2,6 +2,10 @@
 title: Dynamic list loading in JavaScript with fallback
 date: 2019-08-22
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 alias:
 - 2019/09/22/dynamic-list-loading-with-javascript-and-fallback/
 ---
