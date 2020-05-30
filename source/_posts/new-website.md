@@ -2,6 +2,7 @@
 title: New Website, New Workflow, New Intentions
 date: 2019-07-14
 featured_image: thumbnail.jpg
+structured_data: "BlogPosting"
 alias:
 - en/projects/
 - it/progetti/
