@@ -45,7 +45,9 @@
            'url': full_url_for('/images/amp.png')
          }
        },
-       'datePublished': page.date.toISOString()
+       'datePublished': page.date.toISOString(),
+       'dateModified': page.date.toISOString(),
+       'mainEntityOfPage': full_url_for(page.link || page.path)
      }); -%>
   <script type="application/ld+json">
 <%- JSON.stringify(page.structured_data) -%>
