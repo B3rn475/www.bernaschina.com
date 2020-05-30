@@ -7,6 +7,7 @@
       canonical: page.path
     }) -%>
 <% if (typeof page.structured_data === 'object') {
+     var structured_data = _.cloneDeep(page.structured_data);
      function fillBlanksWith(object, value) {
        Object.keys(value).forEach(function (key) {
          if (object.hasOwnProperty(key)) {
@@ -18,14 +19,14 @@
          }
        });
      }
-     switch (page.structured_data['@type']) {
+     switch (structured_data['@type']) {
        case 'BlogPosting':
-         fillBlanksWith(page.structured_data, {
+         fillBlanksWith(structured_data, {
            'headline': page.title
          });
          break;
      }
-     fillBlanksWith(page.structured_data, {
+     fillBlanksWith(structured_data, {
        '@context': 'https://schema.org/',
        'author': {
          '@type': 'Person',
@@ -43,11 +44,11 @@
        'dateModified': page.date.toISOString(),
        'mainEntityOfPage': full_url_for(page.link || page.path)
      });
-     page.structured_data.image = page.structured_data.image.map(function (url) {
+     structured_data.image = structured_data.image.map(function (url) {
        return full_url_for(page.path + url);
      }); -%>
   <script type="application/ld+json">
-<%- JSON.stringify(page.structured_data) -%>
+<%- JSON.stringify(structured_data) -%>
   </script>
 <% } -%>
 <%- partial('partial/pre_body_scripts') -%>
