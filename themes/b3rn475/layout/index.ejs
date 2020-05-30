@@ -1,3 +1,11 @@
+<head>
+<%- partial('partial/metadata', {
+      config: config,
+      theme: theme,
+      canonical: page.link || page.path
+    }) -%>
+<%- partial('partial/pre_body_scripts') -%>
+</head>
 <body class="homepage">
   <header>
     <div class="title">
@@ -129,4 +137,5 @@
       <a href="/privacy-policy">Privacy Policy</a>
     </div>
   </footer>
+  <%- partial('partial/post_body_scripts') -%>
 </body>

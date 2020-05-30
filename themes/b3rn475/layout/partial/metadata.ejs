@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<% global.title = global.title || config.title; -%>
+<meta property="og:title" content="<%= title %>">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:card" content="summary_large_image">
+<% if (config.social && config.social.Twitter) { -%>
+<meta name="twitter:creator" content="@<%= config.social.Twitter %>">
+<% }
+   global.thumbnail = global.thumbnail || theme.thumbnail;
+   if (thumbnail) {
+   -%>
+<meta property="og:image" content="<%= full_url_for(thumbnail) %>">
+<meta name="twitter:image" content="<%= full_url_for(thumbnail) %>">
+<% }
+   if (canonical) { -%>
+<link rel="canonical" href="<%= full_url_for(canonical) %>">
+<% } -%>
+<title><%= title %></title>

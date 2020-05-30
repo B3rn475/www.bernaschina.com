@@ -1,3 +1,13 @@
+<head>
+<%- partial('partial/metadata', {
+      config: config,
+      theme: theme,
+      title: page.title,
+      thumbnail: page.featured_image,
+      canonical: page.link || page.path
+    }) -%>
+<%- partial('partial/pre_body_scripts') -%>
+</head>
 <body class="post">
   <header>
     <a class="home" href="<%= url_for('/') %>"></a>
@@ -9,4 +19,5 @@
   <div class="content">
   <%- page.content -%>
   </div>
+  <%- partial('partial/post_body_scripts') -%>
 </body>
