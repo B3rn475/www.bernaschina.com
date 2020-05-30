@@ -26,12 +26,12 @@
      switch (page.structured_data['@type']) {
        case 'BlogPosting':
          fillBlanksWith(page.structured_data, {
-           'healine': page.title
+           'headline': page.title
          });
          break;
      }
      fillBlanksWith(page.structured_data, {
-       '@content': 'https://schema.org/',
+       '@context': 'https://schema.org/',
        'image': full_url_for(page.featured_image),
        'author': {
          '@type': 'Person',
@@ -42,7 +42,7 @@
          'name': config.title,
          'logo': {
            '@type': 'ImageObject',
-           'url': full_url_for('/images/google_scholar.png')
+           'url': full_url_for('/images/amp.png')
          }
        },
        'datePublished': page.date.toISOString()
