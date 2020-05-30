@@ -148,6 +148,9 @@ a[name="posts"] {
       }
     }
   }
+  .hidden-post {
+    display: none;
+  }
   > .more {
     list-style-type: none;
     padding: 0;
@@ -155,7 +158,7 @@ a[name="posts"] {
     display: block;
     text-align: center;
     position: relative;
-    > a {
+    > button {
       transition: border $theme-transition, background-color $theme-transition;
       background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
       color: grey;
@@ -205,7 +208,7 @@ html.dark-theme {
       }
     }
     > .more {
-      > a {
+      > button {
         transition: border $theme-transition, background-color $theme-transition;
         background-color: $background-color;
         border: map-get($dark-theme, "post-list-line-border");

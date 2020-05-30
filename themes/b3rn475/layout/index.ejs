@@ -13,15 +13,16 @@
   <ul class="posts">
   <% var page_size = 5;
     page.posts.each(function (post, index) {
-      if (index !== 0 && index % page_size === 0) {
-        if (index !== page_size) {-%>
-          </noscript>
-        <%  } -%>
-    <noscript>
-  <%  } -%>
-    <li class="post">
+      var page = Math.floor(index / page_size); -%>
+    <li class="<%= page === 0 ? 'post' : 'hidden-post' %>">
       <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+        <% if (page != 0) { -%>
+        <noscript>
+        <% } -%>
         <img src="<%= post.featured_image %>" alt="<%= post.title %>">
+        <% if (page != 0) { -%>
+        <noscript>
+        <% } -%>
       </a>
       <div class="details">
         <p><%= date(post.date) %></p>
@@ -33,32 +34,31 @@
         <p><%= post.excerpt %></p>
       </div>
     </li>
-  <% });
-     if (page.posts.length > page_size) { -%>
-    </noscript>
-  <% } -%>
+  <% }); -%>
   </ul>
   <script>
     (function () {
-      function showNextPage(ul) {
-        var noscript = ul.querySelector('noscript'), // the first noscript
-            parser = document.createElement('div'), // a temporary element to parse the content of the noscript
-            li;
-        parser.innerHTML = noscript.innerHTML; // parse the pages
-        while (li = parser.querySelector('li')) { // for each parse li tag
-          li.remove(); // remove it from the parser
-          ul.insertBefore(li, noscript); // insert it before the noscript
+      function showNextPage(ul, n_elements_to_show) {
+        var post,
+            noscript;
+        while (n_elements_to_show) {
+          li = ul.querySelector(':scope > li.hidden-post'); // first hidden post
+          while (noscript = li.querySelector('noscript')) { // for each noscript
+            noscript.insertAdjacentHTML('beforebegin', noscript.innerHTML); // parse and insert content before node
+            noscript.remove(); // remove the noscript
+          }
+          li.className = "post"; // make the post visible
+          n_elements_to_show -= 1;
         }
-        noscript.remove(); // remove the noscript
       }
-      if (document.querySelector("ul.posts noscript")) {
+      if (document.querySelector("ul.posts > .hidden-post")) {
         more_container = document.createElement('li');
         more_container.className = "more";
-        more = document.createElement('a');
+        more = document.createElement('button');
         more.innerHTML = "More Posts";
         more.addEventListener('click', function () {
-          showNextPage(document.querySelector("ul.posts"));
-          if (!document.querySelector("ul.posts noscript")) {
+          showNextPage(document.querySelector("ul.posts"), <%= page_size %>);
+          if (!document.querySelector("ul.posts > .hidden-post")) {
             more_container.remove();
           }
         });
