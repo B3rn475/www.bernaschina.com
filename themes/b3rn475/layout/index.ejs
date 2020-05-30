@@ -61,7 +61,7 @@
       }
       DynamicListLoader.prototype.showNextPage = function() {
         var n_elements_to_show = this.page_size,
-            post,
+            li,
             noscript;
         while (n_elements_to_show) {
           li = this.ul.querySelector(':scope > li.hidden-post'); // first hidden post
@@ -77,6 +77,12 @@
         }
       }
       new DynamicListLoader(document.querySelector('ul.posts'), <%= page_size %>);
+    })();
+    (function () {
+      document.querySelector('a[href="#posts"]').addEventListener('click', function (event) {
+        document.querySelector('a[name="posts"]').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        event.preventDefault();
+      });
     })();
   </script>
   <footer>
