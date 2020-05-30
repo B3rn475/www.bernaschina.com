@@ -2,6 +2,10 @@
 title: MathParseKit has a Logo
 date: 2015-05-04
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 alias:
 - en/blog/software/mathparsekit-available-on-github/
 - it/blog/software/mathparsekit-ha-un-logo/

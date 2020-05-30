@@ -2,6 +2,10 @@
 title: RSciTE and MathParseKit
 date: 2013-09-08
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 alias:
 - en/blog/software/rscite-and-mathparsekit/
 - it/blog/software/rscite-e-mathparsekit/

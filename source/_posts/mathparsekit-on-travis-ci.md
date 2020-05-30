@@ -2,6 +2,10 @@
 title: MathParseKit on Travis-CI
 date: 2013-06-13
 featured_image: thumbnail.jpg
+structured_data:
+  '@type': "BlogPosting"
+  image:
+    - thumbnail_amp.jpg
 alias:
 - en/blog/software/mathparsekit-travis-ci/
 - it/blog/software/mathparsekit-su-travis-ci/
