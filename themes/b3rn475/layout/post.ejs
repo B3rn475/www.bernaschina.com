@@ -6,6 +6,11 @@
       thumbnail: page.featured_image,
       canonical: page.link || page.path
     }) -%>
+<% if (page.structured_data) { -%>
+  <script type="application/ld+json">
+<%- JSON.stringify(page.structured_data) -%>
+  </script>
+<% } -%>
 <%- partial('partial/pre_body_scripts') -%>
 </head>
 <body class="post">
