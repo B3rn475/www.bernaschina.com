@@ -14,7 +14,7 @@
   <% var page_size = 5;
     page.posts.each(function (post, index) {
       var page = Math.floor(index / page_size); -%>
-    <li class="<%= page === 0 ? 'post' : 'hidden-post' %>">
+    <li class="post">
       <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
         <% if (page != 0) { -%>
         <noscript>
@@ -38,33 +38,45 @@
   </ul>
   <script>
     (function () {
-      function showNextPage(ul, n_elements_to_show) {
+      function DynamicListLoader(ul, page_size) {
+        this.ul = ul;
+        this.page_size = page_size;
         var post,
+            more;
+        function nextPostToHide() {
+          return ul.querySelector(':scope > li.post:nth-child(1n+' + (page_size + 1) + ')');
+        }
+        if (post = nextPostToHide()) {
+          do {
+            post.className = 'hidden-post';
+          } while (post = nextPostToHide());
+          this.more_container = document.createElement('li');
+          this.more_container.className = 'more';
+          more = document.createElement('button');
+          more.innerHTML = 'More Posts';
+          more.addEventListener('click', this.showNextPage.bind(this));
+          this.more_container.appendChild(more);
+          ul.appendChild(this.more_container);
+        }
+      }
+      DynamicListLoader.prototype.showNextPage = function() {
+        var n_elements_to_show = this.page_size,
+            post,
             noscript;
         while (n_elements_to_show) {
-          li = ul.querySelector(':scope > li.hidden-post'); // first hidden post
+          li = this.ul.querySelector(':scope > li.hidden-post'); // first hidden post
           while (noscript = li.querySelector('noscript')) { // for each noscript
             noscript.insertAdjacentHTML('beforebegin', noscript.innerHTML); // parse and insert content before node
             noscript.remove(); // remove the noscript
           }
-          li.className = "post"; // make the post visible
+          li.className = 'post'; // make the post visible
           n_elements_to_show -= 1;
         }
+        if (!this.ul.querySelector(':scope > .hidden-post')) {
+          this.more_container.remove();
+        }
       }
-      if (document.querySelector("ul.posts > .hidden-post")) {
-        more_container = document.createElement('li');
-        more_container.className = "more";
-        more = document.createElement('button');
-        more.innerHTML = "More Posts";
-        more.addEventListener('click', function () {
-          showNextPage(document.querySelector("ul.posts"), <%= page_size %>);
-          if (!document.querySelector("ul.posts > .hidden-post")) {
-            more_container.remove();
-          }
-        });
-        more_container.appendChild(more);
-        document.querySelector("ul.posts").appendChild(more_container);
-      }
+      new DynamicListLoader(document.querySelector('ul.posts'), <%= page_size %>);
     })();
   </script>
   <footer>
