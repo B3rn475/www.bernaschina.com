@@ -70,7 +70,9 @@
             li,
             noscript;
         while (n_elements_to_show) {
-          li = this.ul.querySelector(':scope > li.hidden-post'); // first hidden post
+          if (!(li = this.ul.querySelector(':scope > li.hidden-post'))) { // first hidden post
+            break;
+          }
           while (noscript = li.querySelector('noscript')) { // for each noscript
             noscript.insertAdjacentHTML('beforebegin', noscript.innerHTML); // parse and insert content before node
             noscript.remove(); // remove the noscript
