@@ -69,6 +69,7 @@
         var n_elements_to_show = this.page_size,
             li,
             noscript;
+        this.more_container.remove();
         while (n_elements_to_show) {
           if (!(li = this.ul.querySelector(':scope > li.hidden-post'))) { // first hidden post
             break;
@@ -80,8 +81,8 @@
           li.className = 'post'; // make the post visible
           n_elements_to_show -= 1;
         }
-        if (!this.ul.querySelector(':scope > .hidden-post')) {
-          this.more_container.remove();
+        if (this.ul.querySelector(':scope > li.hidden-post')) {
+          this.ul.appendChild(this.more_container);
         }
       }
       new DynamicListLoader(document.querySelector('ul.posts'), <%= page_size %>);
