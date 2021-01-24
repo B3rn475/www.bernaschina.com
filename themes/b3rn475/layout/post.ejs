@@ -7,7 +7,7 @@
       canonical: page.path
     }) -%>
 <% if (typeof page.structured_data === 'object') {
-     var structured_data = _.cloneDeep(page.structured_data);
+     var structured_data = cloneDeep(page.structured_data);
      function fillBlanksWith(object, value) {
        Object.keys(value).forEach(function (key) {
          if (object.hasOwnProperty(key)) {
