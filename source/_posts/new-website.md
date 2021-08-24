@@ -73,20 +73,20 @@ The advantages are:
 - Hexo is a static website generator.
   This removes the requirements for PHP and opens many new Hosting options.
 - I can write each post/page using the technology I think is best.
-  At the moment I'm using [Markdown][markdown-website-url], but I will be able to change this decision on a per post-page basis.
-- I have a good excuse to change the experiment with new themes, the old one is "too complex" to port.
+  At the moment I'm using [Markdown][markdown-website-url], but I will be able to change this decision on a per post/page basis.
+- I have a good excuse to experiment with new themes, the old one is "too complex" to port.
 
 The source code of the website will be hosted on [GitHub][website-repository-url].
 The code will be OpenSource (MIT Licence) and the content will be released under a Creative Commons license (CC BY 4.0).
 
 The generated files will also be hosted and served by GitHub thanks to [GitHub Pages][github-pages-url].
 
-While I will be able to develop and write content locally, the website will be automatically be regenerated and kept in sync by [Travis CI][travisci-website-url], which will trigger a CD (Continuous Deployment) workflow every time I will update the repository.
+While I will be able to develop and write content locally, the website will be automatically regenerated and kept in sync by [Travis CI][travisci-website-url], which will trigger a CD (Continuous Deployment) workflow every time I will update the repository.
 
 ![Raspberry Pi 1 Model B][url-continuous-deployment-image-file]
 
 ### New Intentions
-The new website will no try to do everything, but will focus on the blog, which was probably the most interesting part of the old website.
+The new website will not try to do everything, but will focus on the blog, which was probably the most interesting part of the old website.
 
 It will focus only on __English content__. Maintaining both __English__ and __Italian__ is time consuming and the majority of the feedback I got was related to English content.
 
