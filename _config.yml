@@ -73,18 +73,34 @@ time_format: HH:mm:ss
 theme: b3rn475
 
 # Asset Pipeline
-asset_pipeline:
-  clean_css:
-    enable: true
-  uglify_js:
-    enable: true
-  imagemin:
-    enable: true
-    progressive: true
-    exclude:
-      - svg
-  html_minifier:
-    enable: true
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+css_minifier:
+  enable: true
+  silent: false
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
+  exclude:
+    - svg
 
 # Featured Image
 featured_image:

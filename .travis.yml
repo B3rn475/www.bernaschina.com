@@ -1,19 +1,22 @@
+arch: arm64
+os: linux
 language: node_js
-node_js:
-- lts/*
+node_js: lts/*
 branches:
   only:
   - master
 
-install: npm install
+before_install:
+- export CPPFLAGS="-DPNG_ARM_NEON_OPT=0"
 
-before_script:
--
+install:
+- npm install
 
 script:
-- SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
 - npm run build
 - echo "www.bernaschina.com" > ./public/CNAME
+- cat .travis/known_hosts >> ~/.ssh/known_hosts
+- SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
 - openssl aes-256-cbc -k "$__SECRET__" -md sha256 -in .travis/github_deploy_key.enc -out $SSH_FILE -d
 - chmod 600 "$SSH_FILE"
 - eval "$(ssh-agent -s)"

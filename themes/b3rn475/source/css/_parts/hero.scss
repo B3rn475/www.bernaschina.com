@@ -1,3 +1,5 @@
+@use "sass:math";
+
 body.homepage {
   > header {
     display: inline-block;
@@ -48,7 +50,7 @@ body.homepage {
       background-image: url(../icons/down.svg);
       background-size: cover;
       width: 3rem;
-      height: 3rem / 26 * 15;
+      height: math.div(3rem, 26) * 15;
       position: absolute;
       left: 50%;
       margin-left: -1.5rem;
@@ -113,7 +115,7 @@ body.post {
       background-size: cover;
       display: inline-block;
       width: 1.5rem;
-      height: 1.5rem / 63 * 55;
+      height: math.div(1.5rem, 63) * 55;
     }
     h1 {
       font-weight: inherit;
