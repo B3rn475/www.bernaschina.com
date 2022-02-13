@@ -113,3 +113,4 @@ deploy:
   email: b3rn4@hotmail.it
   repo: git@github.com:B3rn475/www.bernaschina.com.git
   branch: gh-pages
+  ignore_hidden: false

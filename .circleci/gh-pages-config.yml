@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  do-nothing:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - run:
+          name: Nothing
+          command: echo "Do Nothing"
+
+workflows:
+  do-nothing:
+    jobs:
+      - do-nothing:
+        branches:
+          only: master

@@ -1,0 +1,31 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: npm install
+      - run:
+          name: Build
+          command: |
+            npm run build
+            echo "www.bernaschina.com" > ./public/CNAME
+            mkdir ./public/.circleci
+            cp ./.circleci/gh-pages-config.yml ./public/.circleci/config.yml
+      - add_ssh_keys:
+          fingerprints:
+            - "4d:c2:90:c4:95:fc:27:2c:b3:f3:86:3d:e2:07:1e:6e"
+      - run:
+          name: Deploy
+          command: npm run deploy
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build-and-deploy:
+        branches:
+          only: master
