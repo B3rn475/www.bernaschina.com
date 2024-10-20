@@ -25,7 +25,7 @@ It also tends to be built with multiple disk, which allow you to have high capac
   *I should upgrade my workstation.*
   **Why don't you work directly on the NAS? It has multiple TeraBytes of storage.**
 - Damn, my laptop is dead.
-  *I should have and old copy of the document somewhere.*
+  *I should have an old copy of the document somewhere.*
   **Why didn't you work directly on the NAS? It would have survived a disk failure.**
 - I heard that backups are important.
   *Do I need to set up different backups for every PC?*
