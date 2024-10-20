@@ -118,7 +118,7 @@ As you can see in the animation, triggering a SPDT just changes the output to wh
 
 Given the previous definitions we can see that connecting two SPDTs in series actually obtains the expected behavior.
 
-As you can see in the animation, triggeandring any of the two switches connects the first input with the final output, obtaining the expected behavior.
+As you can see in the animation, triggering any of the two switches connects the first input with the final output, obtaining the expected behavior.
 
 > Every time I trigger one of the two switches I start or stop the current flowing.
 
