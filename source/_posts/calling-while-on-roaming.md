@@ -9,7 +9,7 @@ structured_data:
 ---
 I've recently had an interesting (and [looooooooooong][long-joke-url]) conversation with my sister on phone calls, vs calls via an app, while roaming.
 
-Well... I think it is a great idea for an post.
+Well... I think it is a great idea for a post.
 
 First things first.
 
