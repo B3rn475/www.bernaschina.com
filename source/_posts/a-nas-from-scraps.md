@@ -208,6 +208,8 @@ I can easily saturate the **1 Gbps** connection and get on with my day.
 
 ![File Copy](./file-copy.jpg)
 
+While consuming less than **15W** (**~6W** on idle).
+
 ## Is this project done?
 
 Well, yes and no.
