@@ -14,7 +14,7 @@ alias:
 ---
 During the last period I've learned a lot about boards that can be used in Embedded Projects ([Arduino][url-arduino-website], [Raspberry Pi][url-raspberry-pi-website], [BeagleBone Black][url-beagleboard-website] ...).
 The last one has an interesting feature that has caught my attention.
-The possiblity to install a web ide that can be accessed from other devices.
+The possibility to install a web ide that can be accessed from other devices.
 
 ## The question
 
@@ -22,7 +22,7 @@ __Can I do that with the Raspberry Pi that I already own?__
 ![Raspberry Pi 1 Model B][url-raspberry-pi-image-file]
 
 ## The Solution
-First of all we need an ide, I've chosen [Cloud9][url-cloud9-repository] that is the opensource project on which is based [c9.io][url-cloud9-website].
+First of all we need an ide, I've chosen [Cloud9][url-cloud9-repository] that is the open source project on which is based [c9.io][url-cloud9-website].
 
 Cloud9 is developed using various technologies, the most important is [Node.js][url-nodejs-website].
 
@@ -31,7 +31,7 @@ For this reason I've decided to write this tutorial to avoid other people to was
 
 ### First Step: install the OS on the SD
 I've decided to use Debian Wheezy given its stability and diffusion.
-You can find it (With installation istructions) at [raspberrypi.org][url-raspberry-pi-downloads]
+You can find it (With installation instructions) at [raspberrypi.org][url-raspberry-pi-downloads]
 
 ### Second Step: install Node.js
 I was tempted to use the fast and recent version `0.10.x` or the one from the repository `0.6.x`, but I've chosen to use `0.8.17` for a simple reason, using too old or too new versions of Node.js Cloud9 does not install correctly, at least I've failed in doing so (if you have other experiences let me know).
@@ -70,7 +70,7 @@ At the end of this step the nano editor will show up.
 It is necessary to delete the configuration `-msse2` from the file (you can find it in a couple of well visible places).
 To save it `CTRL+X` followed by `Y`
 
-We will now install node-libxml globaly (`-g`) (it requires from 15 to 20 minutes)
+We will now install node-libxml globally (`-g`) (it requires from 15 to 20 minutes)
 
 ```bash
 sudo npm install -g
@@ -110,7 +110,7 @@ npm install vfs-local@0.3.4
 ```
 
 ### The end of our journey
-If carma has helped you (if you have trust in carma), if some saints are watching you (if you are a religious person), or just if you are lucky you will have on your Raspberry Pi a working installation of Cloud9.
+If karma has helped you (if you have trust in karma), if some saints are watching you (if you are a religious person), or just if you are lucky you will have on your Raspberry Pi a working installation of Cloud9.
 You just need to know how to start it:
 
 ```bash
@@ -119,13 +119,13 @@ bin/cloud9.sh -l 0.0.0.0 -w ~/git/
 
 Replace `~/git` with the folder you want to use as workspace, or delete `-w ~/git` allowing Cloud9 to move around in the entire File System.
 
-To access Cloud9 just open your brower (is better Chrome, Chromium or Firefox)  and surf to the address `http://<raspberry pi ip>:3131/`
+To access Cloud9 just open your browser (is better Chrome, Chromium or Firefox)  and surf to the address `http://<raspberry pi ip>:3131/`
 
 Here are the links to a couple of tutorial I've followed to build mine:
 
 [Stack Overflow: Cloud9 Tries To Recreate Settings File](http://stackoverflow.com/questions/18205837/cloud9-tries-to-recreate-settings-file)
 
-I hope this guide has helped you, do not esitate to post questions, clarification or just to say hello.
+I hope this guide has helped you, do not hesitate to post questions, clarification or just to say hello.
 
 [url-arduino-website]: http://www.arduino.cc/
 [url-raspberry-pi-website]: http://www.raspberrypi.org/
