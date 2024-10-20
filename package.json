@@ -17,9 +17,9 @@
     "hexo-generator-alias": "^1.0.0",
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-sitemap": "^3.0.1",
-    "hexo-renderer-dartsass": "^0.1.2",
+    "hexo-renderer-dartsass": "^1.1.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-marked": "^6.3.0",
     "hexo-tag-asset-svg": "^1.0.1",
     "lodash": "^4.17.21"
   },
