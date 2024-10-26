@@ -2,6 +2,8 @@
 <script>
 <%- partial('partial/theme_switcher_pre_body_script', {}, {cache: true}) -%>
 </script>
+<% if (env.env === 'production') { -%>
 <script>
 <%- partial('partial/tracking', {}, {cache: true}) -%>
 </script>
+<% } -%>

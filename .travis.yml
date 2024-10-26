@@ -13,7 +13,7 @@ install:
 - npm install
 
 script:
-- npm run build
+- NODE_ENV=production npm run build
 - echo "www.bernaschina.com" > ./public/CNAME
 - cat .travis/known_hosts >> ~/.ssh/known_hosts
 - SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"

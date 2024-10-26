@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Build
           command: |
-            npm run build
+            NODE_ENV=production npm run build
             echo "www.bernaschina.com" > ./public/CNAME
             mkdir ./public/.circleci
             cp ./.circleci/gh-pages-config.yml ./public/.circleci/config.yml
