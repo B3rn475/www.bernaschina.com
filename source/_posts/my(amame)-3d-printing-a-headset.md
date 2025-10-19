@@ -13,7 +13,7 @@ In a few hours you can print complex objects that are functionally equivalent to
 
 A few years ago I stumbled on [this video from Maker's Muse](https://www.youtube.com/watch?v=YAR-1Z9nAAo).
 They were testing out a 3D printable headset called [head(amame)](https://headamame.com/).
-I thought that was really interesting, but that my 3D printing knowledge was not good enough to finish such a project.
+I thought that was really interesting, but that my 3D printing skills were not good enough to finish such a project.
 
 That changed recently.
 With the release of [head(amame) v2.1](https://www.printables.com/model/534566-headamame-v21-3d-printable-hi-fi-headphones) I thought it was the time to try this out.
@@ -31,7 +31,7 @@ __hope that I didn't make some rookie mistake.__
 ## Changes to the design
 
 ### 3.5mm jack
-While I think that the original design with the 2 Mini-XLRs is really cool, especially to audio experts, it is a bit excessive to me.
+While I think that the original design with the 2 Mini-XLRs is really cool, especially to audio experts, it is a bit excessive for me.
 __I just wanted a good old 3.5mm jack.__
 
 And here comes the community.
@@ -46,9 +46,9 @@ So...
 a few changes to the design later...
 Here is [my modified version](https://www.printables.com/model/1442981-headamame-cones-for-a-top-side-to-side-wire) which adds 2 additional ports on the top for a 3.5mm jack which will connect the 2 sides.
 
-A bit of clever, maybe not, wiring, i.e. having the right channel being routed through the left ear, and the "but you will end up having different wire lengths to the 2 sides" comment.
+A bit of clever, maybe not, wiring, i.e. having the right channel being routed through the left ear, and the "but you will end up having different wire lengths to the 2 sides" comment is covered.
 
-With a bit of ["extra"](https://www.printables.com/model/235168-headamame-extras) heap from the community and even the problem of fixing the cable in place is solved.
+With a bit of ["extra"](https://www.printables.com/model/235168-headamame-extras) help from the community and even the problem of fixing the cable in place is solved.
 
 ### 105mm cushions
 
@@ -80,11 +80,11 @@ A few hours of assembling later... here is the final result.
 
 > Would I do it again?
 
-Absolutely I already started printing some parts to help a friend build its own.
+Absolutely I already started printing some parts to help a friend build their own.
 
 ## The rookie mistakes
 
-I accidentally swapped some wires which forced me to take it a part a figure out a how to rewire it in place without having the resolder everything from scratch...
+I accidentally swapped some wires which forced me to take it a part a figure out a how to rewire it in place without having to resolder everything from scratch...
 
 > Don't look inside
 
