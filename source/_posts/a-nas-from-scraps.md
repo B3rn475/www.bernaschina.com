@@ -10,7 +10,7 @@ structured_data:
 
 ## What is a NAS?
 
-A **N**etwork-**a**ttached **S**torage, or NAS for short, is storage solution (starting from custom hardware going to full fledges servers) which provide access to files over the network.
+A **N**etwork-**a**ttached **S**torage, or NAS for short, is a storage solution (starting from custom hardware going to full fledges servers) which provide access to files over the network.
 
 It can easily fit in many workflows:
 - Hey, I need to send you a a file.
