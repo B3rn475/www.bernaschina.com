@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="-100 -100 1200 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" filterUnits="userSpaceOnUse">
+      <feMorphology in="SourceGraphic" result="dilated" operator="dilate" radius="5"></feMorphology>
+      <feGaussianBlur in="dilated" stdDeviation="10" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M200,0 L400,0 L400,250 L200,250 Z" onclick="flip('first')"></path>
+  <path stroke="lightgrey" stroke-width="2" fill="transparent" d="M600,0 L800,0 L800,250 L600,250 Z" onclick="flip('second')"></path>
+  <g id="wire-in-a" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,100 L220,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,100 L220,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-in-b" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M0,200 L220,200" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M0,200 L220,200" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-mid-a">
+    <path stroke="grey" stroke-width="20" fill="none" d="M380,100 L620,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M380,100 L620,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-mid-b" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M380,200 L620,200" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M380,200 L620,200" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-a">
+    <path stroke="grey" stroke-width="20" fill="none" d="M780,100 L1000,100" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M780,100 L1000,100" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="wire-out-b" class="is-on">
+    <path stroke="grey" stroke-width="20" fill="none" d="M780,200 L1000,200" stroke-linecap="round"></path>
+    <path class="flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M780,200 L1000,200" stroke-linecap="round" filter="url(#glow)"></path>
+  </g>
+  <g id="connection-first-a" onclick="flip('first')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M220,100 L380,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M220,100 L380,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="220" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="220" cy="100" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="380" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-active" cx="380" cy="100" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <g id="connection-first-b" class="is-active" onclick="flip('first')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M220,200 L380,200" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M220,200 L380,200" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="220" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle cx="220" cy="200" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="380" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-active" cx="380" cy="200" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <g id="connection-second-a" onclick="flip('second')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M620,100 L780,100" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M620,100 L780,100" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="620" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power" cx="620" cy="100" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="780" cy="100" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power on-active" cx="780" cy="100" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <g id="connection-second-b" class="is-active is-on" onclick="flip('second')">
+    <path class="connection" stroke="grey" stroke-width="20" fill="none" d="M620,200 L780,200" stroke-linecap="round"></path>
+    <path class="connection flow" stroke-width="10" stroke-dasharray="20 30" fill="none" d="M620,200 L780,200" stroke-linecap="round" filter="url(#glow)"></path>
+    <circle cx="620" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power" cx="620" cy="200" r="10" stroke="none" fill="#00eeaa"></circle>
+    <circle cx="780" cy="200" r="15" stroke="none" fill="grey"></circle>
+    <circle class="on-power on-active" cx="780" cy="200" r="10" stroke="none" fill="none"></circle>
+  </g>
+  <style>
+    <![CDATA[
+    .connection {
+      transform: rotate(-18deg);
+      transform-box: fill-box;
+      transform-origin: 0 0;
+    }
+    .is-active > .connection {
+      transform: rotate(0deg);
+    }
+    .on-power {
+      fill: none;
+    }
+    .flow {
+      stroke: none;
+    }
+    .is-on > .on-power {
+      fill: #00eeaa;
+    }
+    .is-active > .on-active {
+      fill: #00eeaa;
+    }
+    .is-on > .on-power.on-active {
+      fill: none;
+    }
+    .is-active > .on-power.on-active {
+      fill: none;
+    }
+    .is-on.is-active > .on-power.on-active {
+      fill: #00eeaa;
+    }
+    .is-on > .flow, #connection-first-a > .flow, #connection-first-b > .flow {
+      stroke: #00eeaa;
+      animation: dash 2s linear infinite;
+    }
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 0;
+      }
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+    ]]>
+  </style>
+  <script>
+    //<![CDATA[
+      function isActive(node) {
+        return node.classList.contains("is-active");
+      }
+      function flip(item) {
+        var wireMidA = document.getElementById("wire-mid-a"),
+            wireMidB = document.getElementById("wire-mid-b"),
+            wireOutA = document.getElementById("wire-out-a"),
+            wireOutB = document.getElementById("wire-out-b"),
+            connectionFirstA = document.getElementById("connection-first-a"),
+            connectionFirstB = document.getElementById("connection-first-b"),
+            connectionSecondA = document.getElementById("connection-second-a"),
+            connectionSecondB = document.getElementById("connection-second-b"),
+            flowA = connectionSecondA.querySelector("path.flow"),
+            flowB = connectionSecondB.querySelector("path.flow");
+        if (item == "first") {
+          connectionFirstA.classList.toggle("is-active");
+          connectionFirstB.classList.toggle("is-active");
+          wireMidA.classList.toggle("is-on");
+          wireMidB.classList.toggle("is-on");
+          connectionSecondA.classList.toggle("is-on");
+          connectionSecondB.classList.toggle("is-on");
+        } else {
+          connectionSecondA.classList.toggle("is-active");
+          connectionSecondB.classList.toggle("is-active");
+        }
+        wireOutA.classList.remove("is-on");
+        if (isActive(connectionFirstA) && isActive(connectionSecondA)) {
+          wireOutA.classList.add("is-on");
+        }
+        wireOutB.classList.remove("is-on");
+        if (isActive(connectionFirstB) && isActive(connectionSecondB)) {
+          wireOutB.classList.add("is-on");
+        }
+      }
+    //]]>
+  </script>
+</svg>
